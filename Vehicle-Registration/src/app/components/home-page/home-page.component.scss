@@ -1,0 +1,42 @@
+.container1{
+        width: 100%;
+        background-color: #2e2e3831 ;
+    
+    .section1{
+        width: 100%;
+        overflow: hidden;
+        height: 38rem;
+        background: url("https://wallpaperaccess.com/full/155161.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 10px;
+
+        // .carousel-inner{
+        //     .carousel-item{
+        //         img{
+        //             height: 500px;
+                    
+        //         }
+        //     }
+        // }
+        .row-container{
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            top: 22rem;
+            
+        }
+        
+        
+    }
+    .section2{
+        max-width: 700px;
+        margin: auto;
+        padding: 10px;
+
+        .section2-content{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}

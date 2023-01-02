@@ -1,0 +1,30 @@
+.contain{
+    width: 100%;
+    overflow: hidden;
+    height: 38rem;
+    background: url("https://wallpaperaccess.com/full/155161.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+   .viewdetils{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 16rem;
+    .searchinput{
+        max-width: 700px;
+        .searchicon-container{
+            width: 40px;
+            background-color: rgb(136, 132, 132);
+            display: flex;
+            justify-content: center;
+            .searchicon{
+                width: 19px;
+            }
+        }
+        .searchicon-container:hover{
+            background-color: rgb(94, 91, 91);
+        }
+    }
+   } 
+}
