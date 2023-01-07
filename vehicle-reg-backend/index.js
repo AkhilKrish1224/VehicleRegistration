@@ -2,12 +2,15 @@ const express = require("express");
 const database = require('./sqlConnection');
 const cors = require("cors");
 
-const app = express();
+var bodyparser=require('body-parser');
+const app = new express();
+
 app.use(cors());
+app.use(bodyparser.json());
 
 database.connect(function(err) {
     console.log("Connected!");
-    // var sql = "CREATE TABLE vehicle_reg (name VARCHAR(255), address VARCHAR(255))";
+    // var sql = "CREATE TABLE vehicle_reg (vehNo VARCHAR(10), name VARCHAR(25), address VARCHAR(255))";
     // database.query(sql, function (err, result) {
     //   console.log("Table created");
     // });
@@ -23,6 +26,31 @@ database.connect(function(err) {
           res.send(output);
         });
     
+  })
+
+  app.post('/register' ,(req,res)=>{
+    var user = req.body.data;
+    var sql = "INSERT INTO `user` (`name`, `email`, `password`) VALUES ("+ JSON.stringify(user.name)+","+ JSON.stringify(user.email) +","+ JSON.stringify(user.password)+");"
+    database.query(sql, function (err, result) {
+      console.log(result);
+    })
+  })
+
+  app.post('/login' ,(req,res)=>{
+    var user = req.body.data;
+    console.log(user)
+    var sql = "SELECT * FROM user WHERE email ="+JSON.stringify(user.email);
+    database.query(sql, function (err, result) {
+      var output= Object.values(JSON.parse(JSON.stringify(result)));
+      console.log(err);
+      if(output[0]?.password===user.password ){
+        res.send({res:"Success"});
+      }
+      else{
+        res.send({res:"Login Again"});
+      }
+      //console.log(result);
+    })
   })
   
 app.listen(5000, () => {

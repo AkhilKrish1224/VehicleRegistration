@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
+import { NewRegComponent } from './components/new-reg/new-reg.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomePageComponent,
-    ViewDetailsComponent
+    ViewDetailsComponent,
+    NewRegComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

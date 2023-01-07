@@ -1,0 +1,16 @@
+.contain{
+    width: 100%;
+    overflow: hidden;
+    height: 38rem;
+    background: url("https://wallpaperaccess.com/full/155161.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loginbtn{
+        position: relative;
+        left: 9rem;
+    }
+}
