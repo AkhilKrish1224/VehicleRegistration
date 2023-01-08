@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'; 
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 
@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class VehicleServiceService {
   details:any={};
-
+  public login = new BehaviorSubject<any>({});
+  loggedin = this.login.asObservable();
   constructor(private http:HttpClient) { }
 
 
@@ -27,6 +28,9 @@ export class VehicleServiceService {
   }
   returnDetails(){
     return this.details;
+  }
+  setlogin(value:any){
+    this.login.next(value);
   }
   
 }

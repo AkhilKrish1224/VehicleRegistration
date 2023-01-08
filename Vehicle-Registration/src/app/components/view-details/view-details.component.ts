@@ -13,6 +13,7 @@ export class ViewDetailsComponent {
 
   constructor(private service:VehicleServiceService, private router:Router){}
   ngOnInit(){
+    this.service.setlogin(true);
 
   }
   searchVehicle(){

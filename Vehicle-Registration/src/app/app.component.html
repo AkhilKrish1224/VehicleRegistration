@@ -1,2 +1,3 @@
-<app-header></app-header>
+<div *ngIf="login==false||null"><app-beforeloginheader></app-beforeloginheader></div>
+<div *ngIf="login==true"><app-header></app-header></div>
 <router-outlet></router-outlet>

@@ -20,6 +20,13 @@ export class NewRegComponent {
       //console.log(this.regDetails);
       this.service.regUser(this.regDetails).subscribe((res)=>{
         console.log(JSON.stringify(res));
+        if(res.res==="Success"){
+          alert("Registration Successful");
+          this.router.navigateByUrl("/login");
+        }
+        else{
+          alert("Registration Failed, Try again");
+        }
       })
     }
     else{

@@ -10,7 +10,8 @@ export class ViewVehicleComponent {
   vehDetails:any={};
   constructor(private service:VehicleServiceService){}
   ngOnInit(){
+    this.service.setlogin(true);
     this.vehDetails=this.service.returnDetails();
-    
+
   }
 }

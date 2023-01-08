@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { VehicleServiceService } from 'src/app/services/vehicle-service.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,15 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor(private router:Router){}
+  constructor(private router:Router, private service:VehicleServiceService){}
 
 
   gotoNewreg(){
     this.router.navigateByUrl("/registration");
   }
   gotoLogin(){
+
+    this.service.setlogin(false);
     this.router.navigateByUrl("/login");
   }
 }

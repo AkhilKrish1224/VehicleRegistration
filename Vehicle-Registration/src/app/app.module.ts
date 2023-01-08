@@ -11,6 +11,7 @@ import { ViewDetailsComponent } from './components/view-details/view-details.com
 import { NewRegComponent } from './components/new-reg/new-reg.component';
 import { LoginComponent } from './components/login/login.component';
 import { ViewVehicleComponent } from './components/view-vehicle/view-vehicle.component';
+import { BeforeloginheaderComponent } from './common/beforeloginheader/beforeloginheader.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ViewVehicleComponent } from './components/view-vehicle/view-vehicle.com
     ViewDetailsComponent,
     NewRegComponent,
     LoginComponent,
-    ViewVehicleComponent
+    ViewVehicleComponent,
+    BeforeloginheaderComponent
   ],
   imports: [
     BrowserModule,

@@ -37,6 +37,12 @@ database.connect(function(err) {
     var sql = "INSERT INTO `users` (`name`, `email`, `password`) VALUES ("+ JSON.stringify(user.name)+","+ JSON.stringify(user.email) +","+ JSON.stringify(user.password)+");"
     database.query(sql, function (err, result) {
       console.log(result);
+      if(!err){
+        res.send({res:"Success"});
+      }
+      else{
+        res.send({res:"Registration Failed"});
+      }
     })
   })
 
