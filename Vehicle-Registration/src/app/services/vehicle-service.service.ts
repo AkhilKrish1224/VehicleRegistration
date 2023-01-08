@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VehicleServiceService {
+  details:any={};
 
   constructor(private http:HttpClient) { }
 
@@ -21,5 +22,12 @@ export class VehicleServiceService {
   loginUser(value:any):Observable<any>{
     return this.http.post(`http://localhost:5000/login`,{data:value});
   }
+  setDetails(value:any){
+    this.details=value;
+  }
+  returnDetails(){
+    return this.details;
+  }
+  
 }
 

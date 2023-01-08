@@ -1,0 +1,22 @@
+.contain{
+    height: 30rem;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    .maincontents{
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        .imgcontain{
+            img{
+                width: 100%;
+            }
+        }
+        .vehDetails{
+            display: flex;
+            .field{
+                width: 15rem;
+            }
+        }
+    }
+}

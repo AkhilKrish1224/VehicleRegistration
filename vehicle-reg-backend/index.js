@@ -14,6 +14,10 @@ database.connect(function(err) {
     // database.query(sql, function (err, result) {
     //   console.log("Table created");
     // });
+    // var sql = "CREATE TABLE users (name VARCHAR(10), email VARCHAR(25), password VARCHAR(255))";
+    // database.query(sql, function (err, result) {
+    //   console.log("Table created2");
+    // });
   });
 
   app.get('/getDetails/:id',(req,res)=>{
@@ -30,7 +34,7 @@ database.connect(function(err) {
 
   app.post('/register' ,(req,res)=>{
     var user = req.body.data;
-    var sql = "INSERT INTO `user` (`name`, `email`, `password`) VALUES ("+ JSON.stringify(user.name)+","+ JSON.stringify(user.email) +","+ JSON.stringify(user.password)+");"
+    var sql = "INSERT INTO `users` (`name`, `email`, `password`) VALUES ("+ JSON.stringify(user.name)+","+ JSON.stringify(user.email) +","+ JSON.stringify(user.password)+");"
     database.query(sql, function (err, result) {
       console.log(result);
     })
@@ -39,7 +43,7 @@ database.connect(function(err) {
   app.post('/login' ,(req,res)=>{
     var user = req.body.data;
     console.log(user)
-    var sql = "SELECT * FROM user WHERE email ="+JSON.stringify(user.email);
+    var sql = "SELECT * FROM users WHERE email ="+JSON.stringify(user.email);
     database.query(sql, function (err, result) {
       var output= Object.values(JSON.parse(JSON.stringify(result)));
       console.log(err);

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { VehicleServiceService } from 'src/app/services/vehicle-service.service';
 
 @Component({
@@ -10,14 +11,15 @@ export class ViewDetailsComponent {
 
   searchText:any='';
 
-  constructor(private service:VehicleServiceService){}
+  constructor(private service:VehicleServiceService, private router:Router){}
   ngOnInit(){
 
   }
   searchVehicle(){
     console.log(this.searchText);
     this.service.getDetails(this.searchText).subscribe((res)=>{
-      alert(JSON.stringify(res));
+      this.service.setDetails(res[0]);
+      this.router.navigateByUrl("/viewVehicle");
     })
   }
   ngOnChanges(){
