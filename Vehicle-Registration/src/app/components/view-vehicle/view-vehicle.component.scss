@@ -3,16 +3,24 @@
     display: flex;
     margin: auto;
     justify-content: center;
+    align-items: top;
     .maincontents{
         display: flex;
-        flex-direction: column;
         width: 45%;
+        flex-direction: column;
         .imgcontain{
             img{
                 width: 100%;
             }
         }
         .vehDetails{
+            display: flex;
+            .field{
+                width: 15rem;
+                height: 3rem;
+            }
+        }
+        .vehDetails1{
             display: flex;
             .field{
                 width: 15rem;

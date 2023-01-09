@@ -10,6 +10,7 @@ import { VehicleServiceService } from 'src/app/services/vehicle-service.service'
 })
 export class LoginComponent {
   loginDetails:any={};
+  isEmailflag:boolean=false;
 
   constructor(private router:Router,private service:VehicleServiceService, private location: LocationStrategy){
     history.pushState(null, "null", window.location.href);  
@@ -32,5 +33,13 @@ this.location.onPopState(() => {
           this.service.setlogin(false);
         }
     })
+  }
+  isEmail(){
+    if(this.loginDetails?.email?.match("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")){
+      this.isEmailflag=true;
+    }
+    else{
+      this.isEmailflag=false;
+    }
   }
 }

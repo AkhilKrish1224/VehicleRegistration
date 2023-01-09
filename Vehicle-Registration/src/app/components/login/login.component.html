@@ -12,7 +12,7 @@
 <form>
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <input type="email" id="form2Example1" class="form-control" [(ngModel)]="loginDetails.email" [ngModelOptions]="{standalone: true}" />
+      <input (change)="isEmail()" type="email" id="form2Example1" class="form-control" [(ngModel)]="loginDetails.email" [ngModelOptions]="{standalone: true}" />
       <label class="form-label" for="form2Example1">Email address</label>
     </div>
 
@@ -26,7 +26,7 @@
     
 
     <!-- Submit button -->
-    <button type="button" class="btn btn-primary btn-block mb-4 loginbtn" (click)="login()">Sign in</button>
+    <button type="button" class="btn btn-primary btn-block mb-4 loginbtn" (click)="login()" [ngClass]="{'disableclass': !isEmailflag== true}">Sign in</button>
 
     <!-- Register buttons -->
     <div class="text-center">

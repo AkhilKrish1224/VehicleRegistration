@@ -14,3 +14,9 @@
         left: 9rem;
     }
 }
+.disableclass{
+    cursor: not-allowed;
+    pointer-events: none;
+    background: rgba(105, 105, 224, 0.897);
+    border: none;
+}
